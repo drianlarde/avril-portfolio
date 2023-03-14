@@ -302,14 +302,18 @@ span {
   color: #ffc107;
 }
 
-.about-me-header {
+.about-me-header,
+.technical-knowledge-header {
   font-weight: 800;
+  font-size: 80px;
+  margin-bottom: 2rem;
 }
-.about-me-paragraph {
+.about-me-paragraph,
+.technical-knowledge-paragraph {
   font-weight: 300;
   max-width: 600px;
   padding: 1rem;
-  margin-bottom: 3rem;
+  text-align: left;
 }
 
 footer {
@@ -341,7 +345,6 @@ footer {
 
 /* select about-me-wrapper first child */
 .about-me-wrapper p {
-  text-align: left;
 }
 
 #grained {
@@ -354,4 +357,61 @@ footer {
   overflow: auto;
   z-index: 100;
   pointer-events: none;
+}
+
+.tk-card {
+  background-color: rgb(255, 255, 255);
+  /* Smooth Shadow */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.01), 0 4px 8px rgba(0, 0, 0, 0.01),
+    0 16px 24px rgba(0, 0, 0, 0.034), 0 24px 32px rgba(0, 0, 0, 0.01);
+
+  border-radius: 30px;
+  max-width: 100%;
+  /* height: 500px; */
+
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0.5rem;
+
+  cursor: pointer;
+}
+
+.card-body h3 {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 1rem 0;
+}
+
+.ti {
+  font-size: 100px;
+  opacity: 0.5;
+  transition: 0.2s ease-in-out;
+}
+
+.card-body h3 {
+  opacity: 0.5;
+}
+
+/* If tk-card is hovered make .card-body and .ti opacity to 1 */
+.tk-card:hover .card-body h3,
+.tk-card:hover .ti {
+  opacity: 1;
+}
+
+.technical-knowledge-wrapper {
+  display: grid;
+  /* Make it responsive grid with 3 columns */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  justify-content: stretch;
+}
+
+.main-tk {
+  margin-bottom: 3rem;
+  padding-inline: 5rem;
 }
