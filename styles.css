@@ -90,6 +90,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -104,17 +105,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -122,6 +127,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -162,7 +168,8 @@ main {
 }
 
 .nav {
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
+  /* Safari */
   position: sticky;
   top: 0;
   backdrop-filter: blur(50px);
@@ -174,6 +181,8 @@ main {
   gap: 3rem;
 
   padding: 1rem 5rem 1rem 5rem;
+  /* Smooth Shadow for Nav Bar */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 }
 
 .nav section ul {
@@ -230,10 +239,15 @@ main {
   animation: fadeIn 1s ease-in-out;
 }
 
+/* Here is the explanation for the code above:
+1. We use the @keyframes rule to create our animation.
+2. The animation is called "fadeIn" and it will last for 1 second.
+3. The animation starts at 0% opacity and ends at 100% opacity. */
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -248,7 +262,7 @@ main {
   margin-bottom: 2rem;
 }
 
-img {
+.me-image {
   height: 450px;
   width: 100%;
   object-fit: cover;
@@ -298,16 +312,18 @@ img {
 }
 
 span {
-  font-weight: 800;
-  color: #ffc107;
+  font-weight: 700;
+  color: black;
 }
 
 .about-me-header,
-.technical-knowledge-header {
+.technical-knowledge-header,
+.content-header {
   font-weight: 800;
   font-size: 80px;
   margin-bottom: 2rem;
 }
+
 .about-me-paragraph,
 .technical-knowledge-paragraph {
   font-weight: 300;
@@ -343,9 +359,6 @@ footer {
   gap: 3rem;
 }
 
-/* select about-me-wrapper first child */
-.about-me-wrapper p {
-}
 
 #grained {
   /* Fill the whole screen */
@@ -379,6 +392,7 @@ footer {
   margin: 0.5rem;
 
   cursor: pointer;
+  z-index: -1;
 }
 
 .card-body h3 {
@@ -414,4 +428,28 @@ footer {
 .main-tk {
   margin-bottom: 3rem;
   padding-inline: 5rem;
+}
+
+.gallery-grid-wrapper {
+  /* Put this in a grid with 3 column and make it responsive  */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(450px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  justify-items: center;
+
+}
+
+.gallery-grid-wrapper img {
+  height: 450px;
+  width: 450px;
+  object-fit: cover;
+
+  border-radius: 3rem;
+  /* Smooth Shadow */
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.01),
+    0 16px 24px rgba(0, 0, 0, 0.034), 0 24px 32px rgba(0, 0, 0, 0.01);
+
 }
